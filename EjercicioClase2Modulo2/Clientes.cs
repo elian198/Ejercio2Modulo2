@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +13,26 @@ namespace EjercicioClase2Modulo2
         public string Apellido { get; set; }
         public bool Vip { get; set; }
 
+
+        public Clientes(String nombre, String apellido,int codCliente, bool vip)
+        {
+            CodCliente = codCliente;
+            Nombre = nombre;
+            Apellido = apellido;
+            Vip = vip;
+        }
+
+        public Clientes() { }
+
+        public override string ToString()
+        {
+          return "Cliente { Nombre: " + Nombre + ", Apellido: " + Apellido + ", Vip: " + Vip + "}" ;
+        }
+
+        public string verTipoCliente(bool vip)
+        {
+            if (vip) return " [PREMIUM]";
+            else return " [NORMAL]";
+        }
     }
 }
